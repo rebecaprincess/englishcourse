@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 20% 96%;
+    --foreground: 220 15% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 12%;
+    --primary: 316 55% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 10% 96%;
+    --secondary-foreground: 220 15% 12%;
+    --muted: 40 10% 96%;
+    --muted-foreground: 220 8% 42%;
+    --accent: 316 55% 40%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 10% 90%;
+    --input: 40 10% 90%;
+    --ring: 316 55% 40%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-[#F6F4EF] text-[#111111] antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-mono {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+}
+
+/* Exercise option */
+.exercise-option {
+  @apply w-full text-left p-3.5 rounded-xl border-2 border-gray-100 bg-white text-sm transition-all;
+}
+.exercise-option:hover:not(:disabled) {
+  @apply border-gray-200 bg-gray-50;
+}
+.exercise-option.correct {
+  @apply border-emerald-300 bg-emerald-50 text-emerald-800;
+}
+.exercise-option.incorrect {
+  @apply border-red-300 bg-red-50 text-red-700;
+}
+.exercise-option.selected {
+  @apply border-[#111111] bg-[#111111]/5;
+}
+
+/* Vocab card */
+.vocab-card {
+  @apply bg-white rounded-xl p-4 border border-gray-100 transition-all;
+}
+.vocab-card:hover {
+  @apply shadow-sm border-gray-200;
+}
+
+/* Writing canvas */
+.writing-canvas {
+  touch-action: none;
+  cursor: crosshair;
+}
+
+/* Word chip */
+.word-chip {
+  @apply inline-flex items-center px-2 py-1 bg-gray-50 rounded-md text-[11px] text-gray-600 border border-gray-100;
+}
+
+/* Progress bar */
+.progress-bar {
+  @apply h-1.5 bg-gray-100 rounded-full overflow-hidden;
+}
+
+/* Level badge */
+.level-badge {
+  @apply inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider;
+}
+
+/* Module header */
+.module-header {
+  @apply flex items-center gap-3 p-4 bg-white rounded-xl border border-[#111111]/5 mb-3;
+}
+
+/* Lesson card */
+.lesson-card {
+  @apply bg-white rounded-xl p-4 border border-gray-100 transition-all;
+}
+.lesson-card:hover {
+  @apply shadow-sm border-gray-200;
+}
+
+/* Theory box */
+.theory-box {
+  @apply p-4 rounded-xl;
+}
+
+/* Grammar example */
+.grammar-example {
+  @apply p-3 bg-gray-50 rounded-lg border-l-4 border-[#A02B8A];
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .lesson-grid {
+    grid-template-columns: 1fr;
+  }
+}
